@@ -19,7 +19,6 @@ public class Client {
 
 
 
-
 //            writer = new PrintWriter(socket.getOutputStream());
 //            writer.print("GET / HTTP/1.0\r\n");
 //            writer.print("HOST: robdangero.us\r\n\r\n");
@@ -33,13 +32,14 @@ public class Client {
 //            }
 
             String line = "";
-            while(!line.equals("fini")){
+            while(!line.equals("FIN")){
                 try{
 
 
                     line = in.readLine();
 //                    out.writeUTF(line);
 
+                    //"GET" OU "HEAD"
                     CommandReceive(line);
 
                 }
@@ -63,13 +63,30 @@ public class Client {
         }
     }
 
-
     private void CommandReceive(String line){
         switch (line){
             case "GET":
                 try{
                     writer = new PrintWriter(socket.getOutputStream());
                     writer.print("GET / HTTP/1.0\r\n");
+                    writer.print("HOST: robdangero.us\r\n\r\n");
+                    writer.flush();
+                    reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+
+                    String outString;
+
+                    while ((outString = reader.readLine())!=null){
+                        System.out.println(outString);
+                    }
+                }
+                catch (IOException e){
+                    System.out.println(e);
+                }
+                break;
+            case "HEAD":
+                try{
+                    writer = new PrintWriter(socket.getOutputStream());
+                    writer.print("HEAD / HTTP/1.0\r\n");
                     writer.print("HOST: robdangero.us\r\n\r\n");
                     writer.flush();
                     reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="TP1_Serveur:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/TP1_Serveur_jar</output-path>
+    <root id="archive" name="TP1_Serveur.jar">
+      <element id="module-output" name="TP1_Serveur" />
+    </root>
+  </artifact>
+</component>

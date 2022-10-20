@@ -53,7 +53,7 @@ public class Client {
                 try{
                     writer = new PrintWriter(socket.getOutputStream());
                     writer.print("GET / HTTP/1.0\r\n");
-                    writer.print("HOST: 192.168.2.249\r\n\r\n"); //robdangero.us
+                    writer.print("HOST: 206.41.87.6\r\n\r\n"); //robdangero.us
                     writer.flush();
                     reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
@@ -71,7 +71,7 @@ public class Client {
                 try{
                     writer = new PrintWriter(socket.getOutputStream());
                     writer.print("HEAD / HTTP/1.0\r\n");
-                    writer.print("HOST: 192.168.2.249\r\n\r\n"); //robdangero.us
+                    writer.print("HOST: 206.41.87.6\r\n\r\n"); //robdangero.us
                     writer.flush();
                     reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
@@ -89,7 +89,7 @@ public class Client {
                 try{
                     writer = new PrintWriter(socket.getOutputStream());
                     writer.print("PUT /new.html HTTP/1.0\r\n");
-                    writer.print("HOST: 192.168.2.249\r\n\r\n");
+                    writer.print("HOST: 206.41.87.6\r\n\r\n");
                     writer.flush();
                     reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
